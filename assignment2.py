@@ -23,3 +23,13 @@ final balance: 1320.68
 
 """
 
+
+P = float(input("Please enter the amount of principal"))
+R = float(input("please enter the rate "))/100
+t = int(input("please enter the number of years"))
+M = 0.0
+for i in range(t):
+    M = M+P
+    M += M * R
+    M = round(M,2)
+print(f"Your final blance is ${M}")
