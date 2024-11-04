@@ -22,18 +22,12 @@ rate: 5%
 10 years
 final balance: 1320.68
 """
-P = float(input("Enter an intial investment: "))
-R = float(input("Enter the annual interest rate in percentage: "))
-x = input("Enter in date(d) / year(y) or month(m): ")
-if x == "d":
-  t = int(input("Enter number of days: "))
-  t = t/365
-elif x == "y":
-  t = int(input("Enter number of years: "))
-elif x == "m":
-  t = int(input("Enter number of months: "))
-  t = t/12
-else:
-  print("Invalid input")
-I = round(P * R / 100 * t, 2)
-print(f"The amount of simple interest for your investment is ${I}")
+P = float(input("Enter annual investment: "))
+R = float(input("Enter the annual interest rate in percentage: "))/100
+T = int(input("Enter number of years: "))
+B=0.0
+while T > 0:
+    B+=P
+    B+=B*R
+    T-=1
+print(f"Final balace: ${round(B, 2)}")
